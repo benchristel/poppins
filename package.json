@@ -1,6 +1,6 @@
 {
   "name": "poppins",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "ES6-optimized JavaScript dependency injection",
   "repository": "https://github.com/benchristel/poppins",
   "main": "index.js",
