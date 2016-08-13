@@ -46,7 +46,7 @@ expect(kite).toEqual('no kite :(')
 
 ### The Module Cache
 
-Each time you retrieve modules with `let {foo, bar} = inject()`, your factory functions are invoked to build the dependency tree. Caching is in place so each factory will be called at most once, even if multiple things depend on that module. However, *the cache is cleared* each time you call `inject()`. This allows you to have multiple instances of your app or library running in the same VM, while keeping their state isolated.
+Each time you retrieve modules with `let {foo, bar} = inject()`, your factory functions are invoked to build the dependency tree. Caching is in place so each factory will be called at most once, even if multiple things depend on that module. However, *a new cache is created* for each time you call `inject()`. This allows you to have multiple instances of your app or library running in the same environment, while keeping their state isolated.
 
 This also has benefits for test isolation, as you're guaranteed to get a brand-new object graph in each test if you access your modules using `inject()`.
 
