@@ -21,7 +21,6 @@
     "gulp-jasmine": "^2.3.0"
   },
   "dependencies": {
-    "proxy-polyfill": "^0.1.6",
     "shallow-copy": "0.0.1"
   }
 }

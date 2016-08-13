@@ -1,4 +1,4 @@
-require('proxy-polyfill')
+require('./proxy-polyfill.js')
 var shallowCopy = require('shallow-copy')
 var hasOwnProperty = Object.prototype.hasOwnProperty
 
