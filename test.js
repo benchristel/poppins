@@ -1,5 +1,7 @@
 var Poppins = require('./index')
 
+console.log(process.env)
+
 describe('Poppins', function() {
   var inject
 
@@ -134,7 +136,7 @@ describe('Poppins', function() {
 
     inject().a
 
-    expect(function() { 
+    expect(function() {
       inject('b', function() { return 2 })
     }).toThrowError("Poppins: You can't register a new module now because some modules have already been built.")
   })
