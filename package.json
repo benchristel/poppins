@@ -1,7 +1,8 @@
 {
   "name": "poppins",
   "version": "0.0.0",
-  "description": "No-nonsense dependency injector",
+  "description": "ES6-optimized JavaScript dependency injection",
+  "repository": "https://github.com/benchristel/poppins",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
@@ -18,5 +19,9 @@
   "devDependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-jasmine": "^2.3.0"
+  },
+  "dependencies": {
+    "proxy-polyfill": "^0.1.6",
+    "shallow-copy": "0.0.1"
   }
 }

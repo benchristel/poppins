@@ -1,6 +1,6 @@
 # poppins
 
-A JavaScript dependency injection framework
+ES6-optimized dependency injection
 
 ## How?
 
@@ -23,12 +23,33 @@ inject('kite', ({paper, string}) => {
     return 'no kite :('
   }
 })
+
+inject('paper', () => true)
+inject('string', () => true)
 ```
 
 ### Get your stuff, with dependencies injected
 
 ```javascript
-inject(function ({kite}) {
-  // do stuff with the kite
-})
+let {kite} = inject()
+expect(kite).toEqual('a kite!')
 ```
+
+### Override dependencies with test doubles
+
+```javascript
+let {kite} = inject({paper: false})
+expect(kite).toEqual('no kite :(')
+```
+
+## Caveats
+
+### The Module Cache
+
+Each time you retrieve modules with `let {foo, bar} = inject()`, your factory functions are invoked to build the dependency tree. Caching is in place so each factory will be called at most once, even if multiple things depend on that module. However, *the cache is cleared* each time you call `inject()`. This allows you to have multiple instances of your app or library running in the same VM, while keeping their state isolated.
+
+This also has benefits for test isolation, as you're guaranteed to get a brand-new object graph in each test if you access your modules using `inject()`.
+
+### ES6 Proxies
+
+Poppins uses ES6 proxies. It comes with a polyfill so you don't need a native Proxy implementation to use it, but you'll get better error messages (for example, if you try to inject a module that doesn't exist) if your environment does have native Proxies.
