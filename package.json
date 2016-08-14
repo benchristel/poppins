@@ -1,7 +1,7 @@
 {
   "name": "poppins",
   "version": "0.1.0",
-  "description": "ES6-optimized JavaScript dependency injection",
+  "description": "ES6-optimized dependency injection",
   "repository": "https://github.com/benchristel/poppins",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,8 @@
   "keywords": [
     "dependency",
     "injection",
+    "inject",
+    "es6",
     "di",
     "browser",
     "framework"
